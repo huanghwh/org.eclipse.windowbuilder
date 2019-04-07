@@ -136,7 +136,7 @@ public final class SwingUtils {
      * 2. Linux synchronizes GTK calls and if being invoked from different threads it may lock up.
      * 3. Windows is indifferent. :-) 
      */
-    if (!EventQueue.isDispatchThread() && display != null && !EnvironmentUtils.IS_LINUX) {
+    if (!EventQueue.isDispatchThread() && display != null && !EnvironmentUtils.IS_LINUX && !EnvironmentUtils.IS_FREEBSD) {
       // async events should be disabled while waiting AWT to be done.
       // Otherwise its possible the state at which AWT still does something 
       // and puts async events into Display, which immediately would be executed

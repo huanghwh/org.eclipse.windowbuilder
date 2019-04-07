@@ -63,6 +63,8 @@ public final class EnvironmentUtils extends AbstractUIPlugin {
   public static final boolean IS_MAC_COCOA;
   /** True if this is running on OS2 */
   public static final boolean IS_OS2;
+  /** True if this is running on FreeBSD */
+  public static final boolean IS_FREEBSD;
   /** True if this is running on Linux */
   public static final boolean IS_LINUX;
   /** True if this is running on Motif */
@@ -84,78 +86,98 @@ public final class EnvironmentUtils extends AbstractUIPlugin {
       IS_MAC = false;
       IS_OS2 = false;
       IS_LINUX = false;
+      IS_FREEBSD = false;
     } else if (SystemUtils.OS_NAME.startsWith("SunOS")) {
       IS_WINDOWS = false;
       IS_UNIX = true;
       IS_MAC = false;
       IS_OS2 = false;
       IS_LINUX = false;
+      IS_FREEBSD = false;
     } else if (SystemUtils.OS_NAME.startsWith("Solaris")) {
       IS_WINDOWS = false;
       IS_UNIX = true;
       IS_MAC = false;
       IS_OS2 = false;
       IS_LINUX = false;
+      IS_FREEBSD = false;
+    } else if (SystemUtils.OS_NAME.startsWith("FreeBSD")) {
+      IS_WINDOWS = false;
+      IS_UNIX = true;
+      IS_MAC = false;
+      IS_OS2 = false;
+      IS_LINUX = false;
+      IS_FREEBSD = true;
     } else if (SystemUtils.OS_NAME.startsWith("Linux")) {
       IS_WINDOWS = false;
       IS_UNIX = true;
       IS_MAC = false;
       IS_OS2 = false;
       IS_LINUX = true;
+      IS_FREEBSD = false;
     } else if (SystemUtils.OS_NAME.startsWith("HP-UX")) {
       IS_WINDOWS = false;
       IS_UNIX = true;
       IS_MAC = false;
       IS_OS2 = false;
       IS_LINUX = false;
+      IS_FREEBSD = false;
     } else if (SystemUtils.OS_NAME.startsWith("AIX")) {
       IS_WINDOWS = false;
       IS_UNIX = true;
       IS_MAC = false;
       IS_OS2 = false;
       IS_LINUX = false;
+      IS_FREEBSD = false;
     } else if (SystemUtils.OS_NAME.startsWith("Irix")) {
       IS_WINDOWS = false;
       IS_UNIX = true;
       IS_MAC = false;
       IS_OS2 = false;
       IS_LINUX = false;
+      IS_FREEBSD = false;
     } else if (SystemUtils.OS_NAME.startsWith("Digital Unix")) {
       IS_WINDOWS = false;
       IS_UNIX = true;
       IS_MAC = false;
       IS_OS2 = false;
       IS_LINUX = false;
+      IS_FREEBSD = false;
     } else if (SystemUtils.OS_NAME.startsWith("OS/400")) {
       IS_WINDOWS = false;
       IS_UNIX = true;
       IS_MAC = false;
       IS_OS2 = false;
       IS_LINUX = false;
+      IS_FREEBSD = false;
     } else if (SystemUtils.OS_NAME.startsWith("OS/2")) {
       IS_WINDOWS = false;
       IS_UNIX = false;
       IS_MAC = false;
       IS_OS2 = true;
       IS_LINUX = false;
+      IS_FREEBSD = false;
     } else if (SystemUtils.OS_NAME.startsWith(OS_NAME_OSX_PREFIX)) {
       IS_WINDOWS = false;
       IS_UNIX = true;
       IS_MAC = true;
       IS_OS2 = false;
       IS_LINUX = false;
+      IS_FREEBSD = false;
     } else if (SystemUtils.OS_NAME.startsWith("Mac")) {
       IS_WINDOWS = false;
       IS_UNIX = false;
       IS_MAC = true;
       IS_OS2 = false;
       IS_LINUX = false;
+      IS_FREEBSD = false;
     } else {
       IS_WINDOWS = false;
       IS_UNIX = false;
       IS_MAC = false;
       IS_OS2 = false;
       IS_LINUX = false;
+      IS_FREEBSD = false;
     }
     IS_MAC_COCOA = IS_MAC && "cocoa".equals(SWT.getPlatform());
     IS_MOTIF = "motif".equals(SWT.getPlatform());

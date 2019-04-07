@@ -92,7 +92,7 @@ public class TableInfo extends CompositeInfo {
       for (TableColumnInfo column : getColumns()) {
         int columnWidth = TableSupport.getColumnWidth(column.getObject());
         int y = 0;
-        if (!EnvironmentUtils.IS_WINDOWS) {
+        if (!EnvironmentUtils.IS_WINDOWS && !EnvironmentUtils.IS_FREEBSD) {
           // SWT Cocoa && Linux GTK excludes column headers from client area, so insets.top is header height.
           // workaround is to adjust y to header height.
           y -= headerHeight;
@@ -104,7 +104,7 @@ public class TableInfo extends CompositeInfo {
     // prepare items bounds
     {
       // see comment above in column headers bounds section.
-      int y = EnvironmentUtils.IS_WINDOWS ? headerHeight : 0;
+      int y = (EnvironmentUtils.IS_WINDOWS || EnvironmentUtils.IS_FREEBSD) ? headerHeight : 0;
       int width = getClientArea().width;
       for (TableItemInfo item : getItems()) {
         item.setModelBounds(new Rectangle(0, y, width, itemHeight));
