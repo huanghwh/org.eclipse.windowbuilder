@@ -62,6 +62,15 @@
          unpack="false"/>
 
    <plugin
+         id="org.eclipse.wb.os.freebsd"
+         os="freebsd"
+         ws="gtk"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="org.eclipse.wb.os.macosx"
          os="macosx"
          download-size="0"

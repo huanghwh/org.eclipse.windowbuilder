@@ -44,6 +44,7 @@
 
 	<!-- OS specific bundles-->
 	<module>org.eclipse.wb.os</module>
+	<module>org.eclipse.wb.os.freebsd</module>
 	<module>org.eclipse.wb.os.linux</module>
 	<module>org.eclipse.wb.os.macosx</module>
 	<module>org.eclipse.wb.os.win32</module>
